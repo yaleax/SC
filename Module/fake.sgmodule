@@ -1,0 +1,54 @@
+#!name=Ariszy Scripts Module
+#!desc=Collected by Ariszy
+#!system=ios
+
+[Script]
+# Ariszy
+http-response https:\/\/api2\.mubu\.com\/v3\/api\/user\/current_user script-path= https://raw.githubusercontent.com/Ariszy/Private-Script/master/rewrite/mubu.js, requires-body=true, timeout=10, tag=幕布
+http-response https:\/\/buy\.itunes\.apple\.com\/verifyReceipt script-path= https://raw.githubusercontent.com/Ariszy/Private-Script/master/rewrite/picsew.js, requires-body=true, timeout=10, tag=Picsew专业版
+
+# Nobyda整理
+http-response ^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Kuwo.js, tag=酷我音乐
+http-request ^https?:\/\/musicpay\.kuwo.cn\/music\.pay\?uid=\d+ script-path= https://raw.githubusercontent.com/Ariszy/Private-Script/master/User/KuWoMusicDownload.js, tag=酷我音乐下载
+http-response ^https://account.wps.*/api/users/ requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js, tag=WPS
+http-response ^https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user requires-body=1,max-size=0,script-path=https://github.com/yaleax/SC/blob/main/JS/BaiduCloud.js, tag=百度网盘倍速
+
+
+# 微信去广告
+http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js
+
+# 解除微信链接限制
+解除微信链接限制 = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js
+
+# 百度（全站替换为手机百度 Quark 的 User-Agent）
+BaiduChangeUA = type=http-request,pattern=^https?:\/\/(?!d\.pcs).*(?<!map)\.baidu\.com,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/BaiduChangeUA.js
+
+# > memrise
+http-response ^https:\/\/api\.memrise\.com\/.+\/(me\/$|dashboard\/$|leaderboards\/following\/) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/langkhach270389/Surge-LK/main/scripts/langkhach/memrise.js,tag=memrise
+
+# > 网易蜗牛读书VIP (By yxiaocai and JO2EY)
+http-response ^https?:\/\/p\.du\.163\.com\/gain\/readtime\/info\.json requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/wnyd.js,tag=网易蜗牛读书VIP
+# > 知音漫客VIP (By mieqq)
+
+# ＞彩云天气解锁vip
+http-response https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user) script-path=https://raw.githubusercontent.com/mymoonyue/QuantumultX/master/Scripts/scripts/caiyun_svip.js, requires-body=true, timeout=10
+
+# Keep 解锁私人课程和动作库 (QX存在bug 该脚本可能无法生效)
+Keep.js = requires-body=1,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/NobyDa/Surge/JS/Keep.js,type=http-response,pattern=^https:\/\/api\.gotokeep\.com\/(.+\/subject|.+\/dynamic)
+
+# > 彩云小译 (By Alex0510)
+cyxy.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/cyxy.js,type=http-response,pattern=^https:\/\/api\.interpreter\.caiyunai\.com\/v1\/user
+
+# 韩剧TV (By 凉意)
+# 下载地址请看脚本内说明
+hanjuTV.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/hanjuTV.js,type=http-response,pattern=https\:\/\/hjapi\.bjxkhc\.com\/v2d2\/users\/.*\/member
+
+
+
+[Header Rewrite]
+# 知乎（部分替换为手机百度 Quark 的 User-Agent）
+^https?:\/\/www\.zhihu\.com header-replace User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/16C50 Quark/604.1 T7/10.3 SearchCraft/2.6.3 (Baidu; P1 8.0.0)
+
+
+[MITM]
+hostname = %APPEND% buy.itunes.apple.com,api2.mubu.com,vip1.kuwo.cn,account.wps.cn, pan.baidu.com,mp.weixin.qq.com, security.wechat.com, weixin110.qq.com,*.baidu.com, api.memrise.com
