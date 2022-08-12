@@ -21,9 +21,10 @@ cyxy.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.c
 hanjuTV.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yaleax/SC/main/JS/hanjuTV.js,type=http-response,pattern=https\:\/\/hjapi\.bjxkhc\.com\/v2d2\/users\/.*\/member
 # Keep 解锁私人课程和动作库 (QX存在bug 该脚本可能无法生效)
 Keep.js = requires-body=1,script-path=https://raw.githubusercontent.com/yaleax/SC/main/JS/Keep.js,type=http-response,pattern=^https:\/\/api\.gotokeep\.com\/(.+\/subject|.+\/dynamic)
-
+#微信读书
+^https?:\/\/i\.weread\.qq\.com\/pay\/memberCardSummary.* url script-response-body https://raw.githubusercontent.com/lcmigg/Surge/master/Script/wxread.js
 
 
 
 [MITM]
-hostname = %APPEND% buy.itunes.apple.com,account.wps.cn, pan.baidu.com, api.memrise.com,p.du.163.com,biz.caiyunapp.com,api.interpreter.caiyunai.com,*.bjxkhc.com,api.bjxkhc.com,api.keepkeep.com, api.gotokeep.com
+hostname = %APPEND% buy.itunes.apple.com,account.wps.cn, pan.baidu.com, api.memrise.com,p.du.163.com,biz.caiyunapp.com,api.interpreter.caiyunai.com,*.bjxkhc.com,api.bjxkhc.com,api.keepkeep.com, api.gotokeep.com,
