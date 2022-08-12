@@ -22,7 +22,7 @@ hanjuTV.js = requires-body=1,max-size=0,script-path=https://raw.githubuserconten
 # Keep 解锁私人课程和动作库 (QX存在bug 该脚本可能无法生效)
 Keep.js = requires-body=1,script-path=https://raw.githubusercontent.com/yaleax/SC/main/JS/Keep.js,type=http-response,pattern=^https:\/\/api\.gotokeep\.com\/(.+\/subject|.+\/dynamic)
 #微信读书
-^https?:\/\/i\.weread\.qq\.com\/pay\/memberCardSummary.* url script-response-body https://raw.githubusercontent.com/lcmigg/Surge/master/Script/wxread.js
+^https?:\/\/i\.weread\.qq\.com\/pay\/memberCardSummary.* url script-response-body https://raw.githubusercontent.com/yaleax/SC/main/JS/wxread.js
 
 
 
