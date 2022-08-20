@@ -1,5 +1,5 @@
 #!name=bilibili自动换区
-#!desc=哔哩哔哩, 港澳台番剧自动切换地区 & 显示豆瓣评分
+#!desc=哔哩哔哩1, 港澳台番剧自动切换地区 & 显示豆瓣评分
 
 [MITM]
 hostname = %APPEND% ap?.bilibili.com, ap?.biliapi.net
