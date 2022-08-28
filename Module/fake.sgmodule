@@ -27,4 +27,4 @@ http-response ^https?:\/\/i\.weread\.qq\.com\/pay\/memberCardSummary.* url scrip
 
 
 [MITM]
-hostname = %APPEND% buy.itunes.apple.com,account.wps.cn, pan.baidu.com, api.memrise.com,p.du.163.com,biz.caiyunapp.com,api.interpreter.caiyunai.com,*.bjxkhc.com,api.bjxkhc.com,api.keepkeep.com, api.gotokeep.com,
+hostname = %APPEND% account.wps.cn, pan.baidu.com, api.memrise.com,p.du.163.com,biz.caiyunapp.com,api.interpreter.caiyunai.com,*.bjxkhc.com,api.bjxkhc.com,api.keepkeep.com, api.gotokeep.com,
