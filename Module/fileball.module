@@ -1,3 +1,5 @@
+#!name=Fileball挂载阿里云盘
+#!desc=版本：2.2312
 [General]
 force-http-engine-hosts = %APPEND% aliyun.example.com:0
 
